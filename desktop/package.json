@@ -1,0 +1,56 @@
+{
+  "name": "finance-desktop-macos",
+  "version": "1.0.0",
+  "author": "Nik",
+  "private": true,
+  "description": "macOS desktop wrapper for the finance app",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "build:web": "node -e \"require('fs').rmSync('../.next/build',{recursive:true,force:true})\" && npm --prefix .. run build && node -e \"const fs=require('fs');const path=require('path');const src=path.resolve(process.cwd(),'../.next/standalone');const dst=path.resolve(process.cwd(),'webapp');if(!fs.existsSync(src)){throw new Error('Missing standalone build at '+src);}fs.rmSync(dst,{recursive:true,force:true});fs.mkdirSync(dst,{recursive:true});fs.cpSync(src,dst,{recursive:true});\"",
+    "start": "npm run build:web && electron .",
+    "pack:mac": "npm run build:web && electron-builder --mac dir",
+    "dist:mac": "npm run build:web && electron-builder --mac dmg"
+  },
+  "devDependencies": {
+    "electron": "^34.5.4",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.nik.finance.desktop",
+    "productName": "Финансы",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/xlsx/**/*"
+    ],
+    "files": [
+      "electron/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "webapp",
+        "to": "webapp",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "icon": "../assets/icon.icns",
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.finance"
+    },
+    "dmg": {
+      "title": "Финансы"
+    }
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

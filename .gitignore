@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+package-lock.json
+bun.lock
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+*.dmg
+*.app
+
+# Electron
+desktop/dist/
+desktop/webapp/
+desktop/node_modules/
+
+# Database
+*.db
+*.db-journal
+db/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+dev.log
+server.log
+
+# Upload folder (user data)
+upload/
+
+# Download folder
+download/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Test coverage
+coverage/
+
+# Prisma
+prisma/*.db
+prisma/*.db-journal
+
+# Misc
+.zscripts/
+mini-services/
+examples/
+Caddyfile
+.dockerignore
