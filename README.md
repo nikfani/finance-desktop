@@ -63,8 +63,9 @@ finance-desktop/
 │   ├── app/               # Страницы и API
 │   ├── components/        # React компоненты
 │   └── store/             # Zustand store
-├── electron/              # Electron main process
-├── desktop/               # Electron конфигурация
+├── desktop/               # Electron
+│   ├── electron/          # Main process
+│   └── package.json       # Конфигурация
 ├── assets/                # Иконки
 └── public/                # Статические файлы
 ```
