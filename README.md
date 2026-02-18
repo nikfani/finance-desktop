@@ -18,30 +18,23 @@
 - Zustand (state management)
 - Electron (macOS desktop)
 
-## Установка
+## Быстрая сборка
 
 ```bash
-# Установить зависимости
-npm install
-
-# Установить зависимости Electron
-cd desktop && npm install && cd ..
-
-# Запуск для разработки
-npm run dev
-```
-
-## Сборка desktop версии
-
-```bash
-# Сборка Next.js
-npm run build
-
-# Сборка Electron (macOS ARM64)
-cd desktop && npm run dist:mac
+git clone https://github.com/nikfani/finance-desktop.git && cd finance-desktop && npm install && cd desktop && npm install && npm run dist:mac
 ```
 
 Готовый файл: `desktop/dist/Финансы-1.0.0-arm64.dmg`
+
+## Разработка
+
+```bash
+git clone https://github.com/nikfani/finance-desktop.git
+cd finance-desktop
+npm install
+cd desktop && npm install && cd ..
+npm run dev
+```
 
 ## Использование
 
