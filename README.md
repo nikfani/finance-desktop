@@ -18,23 +18,28 @@
 - Zustand (state management)
 - Electron (macOS desktop)
 
-## Быстрая сборка
+## Быстрая сборка DMG
+
+Открой терминал и выполни:
 
 ```bash
-git clone https://github.com/nikfani/finance-desktop.git && cd finance-desktop && npm install && cd desktop && npm install && npm run dist:mac
+cd ~/Downloads && rm -rf finance-desktop && git clone https://github.com/nikfani/finance-desktop.git && cd finance-desktop && npm install && cd desktop && npm install && npm run dist:mac
 ```
 
-Готовый файл: `desktop/dist/Финансы-1.0.0-arm64.dmg`
+Готовый DMG файл: `~/Downloads/finance-desktop/desktop/dist/Финансы-1.0.0-arm64.dmg`
 
-## Разработка
+## Разработка (веб-версия)
 
 ```bash
+cd ~/Downloads
 git clone https://github.com/nikfani/finance-desktop.git
 cd finance-desktop
 npm install
 cd desktop && npm install && cd ..
 npm run dev
 ```
+
+Открой http://localhost:3000
 
 ## Использование
 
